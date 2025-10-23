@@ -1,0 +1,21 @@
+def print_calender():
+    days_in_month = int(input("Enter number of days in the month"))
+    start_day = int(input("Enter the starting day of the week (0=Sun, 1=Mon, 2=Tue, 3=Wed, ... etc)"))
+    print("S M T W T F S")
+    print("-" * start_day, end="")
+    day = 1
+    current_pos = start_day
+
+    while day <= days_in_month:
+        print(f"{day} ", end="")
+        day += 1
+        current_pos += 1
+
+        # If current_pos reaches 7 (end of the week), start a new line
+        if current_pos == 7:
+            print()
+            current_pos = 0
+
+    print()  # Final newline
+
+print_calendar()
